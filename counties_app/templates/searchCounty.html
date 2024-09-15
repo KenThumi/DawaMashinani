@@ -1,60 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Search County</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            text-align: center;
-            padding: 12px;
-        }
-
-        th {
-            background-color: #28a745;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        /* Ensure table responsiveness */
-        @media screen and (max-width: 768px) {
-            table {
-                width: 100%;
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 8px;
-            }
-        }
-
-        .btn-custom {
-            margin: 5px;
-        }
-    </style>
-</head>
-
+{%extends 'base.layout.html'%}
 {% block content %}
-<body>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">DAWA MASHINANI</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">REPORTS<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'search_status' %}">County Status</a></li>
+            <li><a href="{% url 'search_disease' %}">Diseases in Counties</a></li>
+            <li><a href="{% url 'search_pest' %}">Pests in Counties</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'retrieve_field_officer' %}">FIELD OFFICERS</a></li>
+        <li><a href="{% url 'retrieve_county' %}">COUNTIES</a></li>
+        <li><a href="{% url 'retrieve_disease' %}">DISEASES</a></li>
+        <li><a href="{% url 'retrieve_pest' %}">PESTS</a></li>
+  
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li> <a href="{% url 'logout' %}"> <span class="glyphicon glyphicon-user"></span> Logout</a> </li>
+        <li><a href="#"> {{user.username}}</a></li>
+      </ul>
+    </div>
+  </nav>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="card">
-                    <div class="card-header text-center">
+                    <!-- <div class="card-header text-center">
                         <h2>DAWA MASHINANI</h2>
-                    </div>
+                    </div> -->
                     <div class="card-body text-center">
                         <div class="mb-3">
                             <a href="{% url 'adminPage' %}" class="btn btn-primary btn-sm btn-custom">HOME</a>
@@ -65,7 +44,7 @@
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>No.</th>
                                         <th>County Name</th>
                                     </tr>
                                 </thead>
@@ -84,6 +63,6 @@
             </div>
         </div>
     </div>
-</body>
+
 {% endblock %}
-</html>
+

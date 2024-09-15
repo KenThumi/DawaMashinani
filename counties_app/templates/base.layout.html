@@ -1,0 +1,80 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DAWA MASHINANI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000; /* Ensures it stays on top */
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Ensure table responsiveness */
+        @media screen and (max-width: 768px) {
+            table {
+                width: 100%;
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        .btn-custom {
+            margin: 5px;
+        }
+
+  </style>
+</head>
+<body>
+
+    {% block content %} 
+     {%endblock%}
+   
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 DAWA MASHINANI. All rights reserved.</p>
+        <p><a href="#about">About Us</a> | <a href="#contacts">Contact Us</a></p>
+    </footer>
+</body>
+</html>
