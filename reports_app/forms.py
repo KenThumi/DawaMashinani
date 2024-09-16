@@ -5,14 +5,11 @@ from counties_app.models import Counties as counties
 from diseases_app.models import diseases
 class reportsForm(forms.ModelForm): 
     # pestName = forms.ModelChoiceField(queryset =  pests.objects.all().values_list('pest_name', flat=True).distinct())
-    pestName = forms.ChoiceField(choices=[(name, name) for name in 
-    pests.objects.values_list('pest_name', flat=True).distinct()])
+    pestName = forms.ChoiceField(choices=[(name, name) for name in pests.objects.values_list('pest_name', flat=True).distinct()])
     # diseaseName = forms.ModelChoiceField(queryset =  diseases.objects.all().values_list('disease_name', flat=True).distinct())
-    diseaseName = forms.ChoiceField(choices=[(name, name) for name in 
-    diseases.objects.values_list('disease_name', flat=True).distinct()])
+    diseaseName = forms.ChoiceField(choices=[(name, name) for name in diseases.objects.values_list('disease_name', flat=True).distinct()])
     # countyName = forms.ModelChoiceField(queryset =  counties.objects.all().values_list('county_name', flat=True).distinct())
-    countyName = forms.ChoiceField(choices=[(name, name) for name in 
-    counties.objects.values_list('county_name', flat=True).distinct()])
+    countyName = forms.ChoiceField(choices=[(name, name) for name in counties.objects.values_list('county_name', flat=True).distinct()])
     class Meta:  
         model = reports
         fields = ['pestName', 'diseaseName', 'countyName']
